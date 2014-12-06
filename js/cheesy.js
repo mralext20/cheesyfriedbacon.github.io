@@ -22,6 +22,7 @@ function CheesyTerminalWrapper() {
 		"mytwitter.txt",
 		"info.txt"
 	];
+	this.madeSandwich = false;
 
 	this.virtualFilesContents = {
 		"welcome.txt": "Welcome to my website! This is a simulated LINUX environment. \n" +
@@ -94,7 +95,25 @@ CheesyTerminalWrapper.prototype.readFile = function(file, term) {
 CheesyTerminalWrapper.prototype.init = function(element) {
 	var thiz = this;
 	$(element).terminal({
-		"sudo": function() {
+		"sudo": function(make, me, a, sandwich) {
+			// Easter egg.
+			if (make === "make") {
+				if (me === "me") {
+					if (a === "a") {
+						if (sandwich === "sandwich") {
+							if (thiz.madeSandwich) {
+								this.echo("I already made you a sandwich, what do you want now?");
+								return;
+							}
+
+							this.echo("OK.");
+							thiz.madeSandwich = true;
+							return;
+						}
+					}
+				}
+			}
+
 			if (!this.isSudoAllowed) {
 				this.echo(thiz.userName + " is not in the sudoers file. This incident will be reported.");
 			} else {
@@ -147,7 +166,14 @@ CheesyTerminalWrapper.prototype.init = function(element) {
 			this.echo("Remember; this is a simulated LINUX environment. Not a real one.");
 		},
 
-		"rm": function(file) {
+		"rm": function(file, root, extra) {
+			if (file === "-rf") {
+				if (root === "/") {
+					this.echo("rm: are you crazy?");
+					return;
+				}
+			}
+
 			if (file == null || file == undefined) {
 				this.echo("Usage: rm <file>");
 			} else {

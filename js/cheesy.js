@@ -1,6 +1,16 @@
 function CheesyTerminalWrapper() {
 	this.terminalName = "cheesy";
-	this.terminalGreetingText = "Hello, and welcome to my homepage! This is a simulated LINUX environment. Go ahead and `ls` to see what files there are!";
+	this.terminalGreetingText = "     _____ _                          \n" +
+								"	/ ____|| |                         \n" +
+								"	| |    | |__   ___  ___  ___ _   _ \n" +
+								"	| |    | '_ \\ / _ \\/ _ \\/ __| | | |\n" +
+								"	| |____| | | |  __/  __/\\__ \\ |_| |\n" +
+								"	 \\_____|_| |_|\\___|\\___||___/\\__, |\n" +
+								"	                              __/ |\n" +
+								"	                             |___/ \n\n" +
+                                "Hello, and welcome to my homepage! This is a simulated LINUX environment. Go ahead and `ls` to see what files there are!\n" +
+								"If you are running on mobile, you can tap the blinking block next to the shell prompt, or tap near the right of the shell\n" +
+								"prompt. It probably won't work, though.";
 	this.userName = "cheesy";
 	this.isSudoAllowed = false;
 	this.currentDirectory = "/home/" + this.userName;

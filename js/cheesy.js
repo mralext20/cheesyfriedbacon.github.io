@@ -151,6 +151,31 @@ CheesyTerminalWrapper.prototype.init = function(element) {
 			}
 		},
 
+		"man": function(page) {
+			if (page == null || page == undefined) {
+				this.echo("Usage: man <page>");
+			} else {
+				this.echo("man: no such page found");
+			}
+		},
+
+		"./a.out": function() {
+			if (thiz.virtualFiles.indexOf("a.out") == -1) return;
+			this.echo("Hello, world!");
+		},
+
+		"gcc": function(file) {
+			if (file == null || file == undefined) {
+				this.echo("gcc: no input files");
+			} else {
+				if (thiz.virtualFiles.indexOf("a.out") == -1) {
+					thiz.virtualFiles.push("a.out");
+				} else {
+					this.echo("gcc: a.out already exists");
+				}
+			}
+		},
+
 		"touch": function(argy) {
 			if (argy == null || argy == undefined) {
 				this.echo("Usage: touch <file>");

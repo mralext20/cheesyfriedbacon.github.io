@@ -1,0 +1,14 @@
+#page {
+	font-family: "Courier New", monospace;
+}
+
+.pagespecial {
+	display: inline;
+}
+
+#sidebar {
+	float: left;
+	display: inline;
+	height: 1000px;
+	margin-right: 10px;
+}

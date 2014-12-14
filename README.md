@@ -1,4 +1,4 @@
-Hello there! This is the repository for my homepage, located at [http://cheesyfriedbacon.github.io](cheesyfriedbacon.github.io).
+Hello there! This is the repository for my homepage, located at [http://cheesyfriedbacon.github.io](http://cheesyfriedbacon.github.io).
 
 # Licensing Information
 
